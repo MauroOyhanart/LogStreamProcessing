@@ -64,4 +64,8 @@ aws dynamodb query \
 - Simplicity: A single publisher emits `LogError` events for records with `level=ERROR` to `EVENT_BUS` (default bus by default).
 - Resilience: Exponential backoff with jitter on failures.
 
+## Terraform overview
+
+The data stream itself is not in the terraform configuration file!
+
 ![/img/terraf.png](/img/terraf.png)
