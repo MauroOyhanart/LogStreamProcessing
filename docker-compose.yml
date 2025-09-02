@@ -1,0 +1,17 @@
+services:
+  consumer:
+    build: .
+    image: log-stream-consumer:latest
+    container_name: log-stream-consumer
+    env_file: .env
+    environment:
+      - AWS_REGION=${AWS_REGION}
+      - KINESIS_STREAM=${KINESIS_STREAM}
+      - KCL_APP_NAME=${KCL_APP_NAME}
+      - DDB_TABLE=${DDB_TABLE}
+      - EVENT_BUS=${EVENT_BUS}
+      - EVENTBRIDGE_REQUIRED=${EVENTBRIDGE_REQUIRED}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+    restart: unless-stopped
